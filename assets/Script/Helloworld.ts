@@ -7,7 +7,7 @@ export default class Helloworld extends cc.Component {
     label: cc.Label = null;
 
     @property
-    text: string = 'Team Cocos';
+    text: string = '';
 
     start () {
         // init logic
