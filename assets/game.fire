@@ -162,7 +162,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 504.0267850025433
+      "z": 528.9901267230257
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -180,7 +180,7 @@
     "_skewY": 0,
     "_is3DNode": false,
     "groupIndex": 0,
-    "_id": "4bQI9h3+VPfZUqxmDAKwXA"
+    "_id": "d306Y2VShBVpWstWoStxG6"
   },
   {
     "__type__": "cc.Camera",
@@ -215,7 +215,7 @@
       "height": 1
     },
     "_renderStages": 1,
-    "_id": "521x98M0tHZrMLdM8f3uEy"
+    "_id": "3cnFijrLRAN7nd6JuU5Um4"
   },
   {
     "__type__": "cc.Node",
@@ -255,7 +255,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 504.0267850025433
+      "z": 528.9901267230257
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -312,7 +312,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "background",
+    "_name": "scenery",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -591,10 +591,10 @@
       "__id__": 11
     },
     "_enabled": true,
+    "accel": 350,
+    "maxSpeed": 0,
     "jumpHeight": 200,
     "jumpDuration": 0.3,
-    "maxMoveSpeed": 400,
-    "accel": 350,
     "_id": "a8wlifiT1I0pv/W/dWX8uq"
   },
   {
