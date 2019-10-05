@@ -162,7 +162,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 554.2562584220408
+      "z": 504.0267850025433
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -255,7 +255,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 554.2562584220408
+      "z": 504.0267850025433
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -595,7 +595,7 @@
     "jumpDuration": 0.3,
     "maxMoveSpeed": 400,
     "accel": 350,
-    "_id": "f6S7kBmuFPS7fgER+c43ju"
+    "_id": "a8wlifiT1I0pv/W/dWX8uq"
   },
   {
     "__type__": "cc.Canvas",
