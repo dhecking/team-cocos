@@ -165,7 +165,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 562.0504870561007
+      "z": 551.6581822106874
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -627,6 +627,9 @@
     "_enabled": true,
     "scoreDisplay": {
       "__id__": 13
+    },
+    "scoreAudio": {
+      "__uuid__": "55d110b9-bab6-4d9d-9416-03e46904fa35"
     },
     "ground": {
       "__id__": 7

@@ -9,6 +9,8 @@ export default class Game extends cc.Component {
 
     @property(cc.Label)
     scoreDisplay: cc.Label = null;
+    @property
+    scoreAudio: cc.AudioClip = null;
 
     @property(cc.Node)
     ground: cc.Node = null;
@@ -48,6 +50,8 @@ export default class Game extends cc.Component {
         this.score++;
         // update the words of the scoreDisplay Label
         this.scoreDisplay.string = 'Score: ' + this.score;
+
+        this.playScoreSound();
     }
 
     spawnNewStar(): void {
@@ -79,6 +83,14 @@ export default class Game extends cc.Component {
 
         // return to the anchor point of the star
         return cc.v2(randX, randY);
+    }
+
+    playScoreSound(){
+        console.log("> Game::playScoreSound()");
+
+        cc.audioEngine.playEffect(this.scoreAudio, false);
+
+        console.log("< Game::playScorepSound()");
     }
 
 }
