@@ -3,9 +3,9 @@
 BRANCH=`git branch | grep \* | cut -d ' ' -f2`
 BUILD="/mnt/c/users/dheck/software/CocosCreator/CocosCreator.exe --path . --build 'title=${BRANCH};platform=web-mobile;buildPath=./build;debug=false;webOrientation=landscape;packageName=com.teamcocos.${BRANCH}'"
 
-echo ${BUILD}
-# echo $BRANCH
-exit 1
+eval ${BUILD}
+
+#exit 1
 
 git add .
 
@@ -20,7 +20,7 @@ set -e
 npm run build
 
 # navigate into the build output directory
-cd dist
+cd build/web-module
 
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
