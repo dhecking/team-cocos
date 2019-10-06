@@ -19,14 +19,14 @@ export default class Game extends cc.Component {
     @property(cc.Prefab)
     starPrefab: cc.Prefab = null;
 
-    @property({displayName: "Min Duration", tooltip: "Min Star Duration"})
+    @property({displayName: "Min Duration"})
     minStarDuration: number = 0;
-    @property({displayName: "Max Duration", tooltip: "Max Star Duration"})
+    @property({displayName: "Max Duration"})
     maxStarDuration: number = 0;
 
     onLoad(): void {
 
-        this.yGround = this.ground.y + this.ground.height/2; // try this.ground.top instead
+        this.yGround = this.ground.y + this.ground.height/2; 
         this.spawnNewStar();
         
     }
