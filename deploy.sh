@@ -1,31 +1,34 @@
 #!/usr/bin/env sh
 
-git add . 
+PLATFORM='web-mobile';
+REPO_PATH=`git rev-parse --show-toplevel`;
+REPO=`basename ${REPO_PATH}`;
+BRANCH=`git branch | grep \* | cut -d ' ' -f2`;
+BUILD="/mnt/c/users/dheck/software/CocosCreator/CocosCreator.exe --path . --build 'title=${BRANCH};platform=${PLATFORM};buildPath=./build;debug=false;webOrientation=landscape;packageName=com.${REPO}.${BRANCH}'";
 
-git commit -m'deploy'
+echo ${BUILD};
+eval ${BUILD};
 
-git push
+cd ./build/${PLATFORM};
 
-# abort on errors
-set -e
+GIT_INIT="git init"
+echo $GIT_INIT
+eval $GIT_INIT
+echo ''
 
-# build
-npm run build
+GIT_ADD="git add -A"
+echo $GIT_ADD
+eval $GIT_ADD
+eval ''
 
-# navigate into the build output directory
-cd dist
+GIT_COMMIT="git commit -m 'deploy'"
+echo $GIT_COMMIT
+eval $GIT_COMMIT
+echo ''
 
-# if you are deploying to a custom domain
-# echo 'www.example.com' > CNAME
-
-git init
-git add -A
-git commit -m 'deploy'
-
-# if you are deploying to https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
-
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:dhecking/team-cocos.git star-catcher:gh-pages
+GIT_PUSH="git push -f git@github.com:dhecking/${REPO}.git master:gh-pages"
+echo $GIT_PUSH
+eval $GIT_PUSH
+echo ''
 
 cd -
