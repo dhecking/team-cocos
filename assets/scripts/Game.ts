@@ -3,6 +3,10 @@ const {ccclass, property} = cc._decorator;
 @ccclass
 export default class Game extends cc.Component {
     yGround: number = 0;
+    score: number = 0;
+
+    @property(cc.Label)
+    scoreDisplay: cc.Label = null;
 
     @property(cc.Node)
     ground: cc.Node = null;
@@ -10,9 +14,6 @@ export default class Game extends cc.Component {
     player: cc.Node = null;
     @property(cc.Prefab)
     starPrefab: cc.Prefab = null;
-
-    @property({displayName: "Score", tooltip: "Current Score"})
-    score: number = 0;
 
     @property({displayName: "Min Duration", tooltip: "Min Star Duration"})
     minStarDuration: number = 0;
@@ -26,6 +27,12 @@ export default class Game extends cc.Component {
 
     start () {
 
+    }
+
+    increaseScore(): void {
+        this.score++;
+        // update the words of the scoreDisplay Label
+        this.scoreDisplay.string = 'Score: ' + this.score;
     }
 
     spawnNewStar(): void {
