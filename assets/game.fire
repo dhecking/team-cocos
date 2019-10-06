@@ -535,7 +535,7 @@
     "player": {
       "__id__": 9
     },
-    "star": {
+    "starPrefab": {
       "__uuid__": "aed02bba-db49-4e84-8019-4642e8410833"
     },
     "score": 0,

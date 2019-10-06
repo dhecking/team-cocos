@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "star",
+    "_name": "starPrefab",
     "_objFlags": 0,
     "_parent": null,
     "_children": [],
@@ -121,7 +121,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "aed02bba-db49-4e84-8019-4642e8410833"
     },
     "fileId": "99QTU71GRP7bgGYnmMaZcR",
     "sync": false

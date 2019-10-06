@@ -10,7 +10,7 @@ export default class Game extends cc.Component {
     @property(cc.Node)
     player: cc.Node = null;
     @property(cc.Prefab)
-    star: cc.Prefab = null;
+    starPrefab: cc.Prefab = null;
 
     @property({displayName: "Score", tooltip: "Current Score"})
     score: number = 0;
@@ -31,7 +31,7 @@ export default class Game extends cc.Component {
 
     private spawnNewStar(): void {
 
-        var newStar = cc.instantiate(this.star);
+        var newStar = cc.instantiate(this.starPrefab);
         this.node.addChild(newStar);
         newStar.setPosition(this.calcRandomPosition());
 
