@@ -86,11 +86,11 @@ export default class Game extends cc.Component {
     }
 
     playScoreSound(){
-        console.log("> Game::playScoreSound()");
+        // console.log("> Game::playScoreSound()");
 
         cc.audioEngine.playEffect(this.scoreAudio, false);
 
-        console.log("< Game::playScorepSound()");
+        // console.log("< Game::playScorepSound()");
     }
 
 }

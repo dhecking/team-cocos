@@ -20,33 +20,33 @@ export default class Player extends cc.Component {
     jumpDuration: number = 0;
 
     onLoad(): void {
-        console.log("> Player::onLoad()");
+        // console.log("> Player::onLoad()");
 
         // Start listening for keyboard events
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
 
-        console.log("< Player::onLoad()");
+        // console.log("< Player::onLoad()");
     }
 
     onDestroy (): void {
-        console.log("> Player::onDestroy()");
+        // console.log("> Player::onDestroy()");
 
         // Stop listening for keyboard events
         cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
         cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
 
-        console.log("< Player::onDestroy()");
+        // console.log("< Player::onDestroy()");
     }
 
     start () {
-        console.log("> Player::start()");
+        // console.log("> Player::start()");
 
         // Start players action interval
         this.playerAction = this.createPlayerActionInterval();
         this.node.runAction(this.playerAction);
 
-        console.log("< Player::start()");
+        // console.log("< Player::start()");
     }
 
     update(dt: number){
@@ -70,7 +70,7 @@ export default class Player extends cc.Component {
 
 
     private createPlayerActionInterval(): cc.ActionInterval {
-        console.log("> Player::createPlayerActionInterval()");
+        // console.log("> Player::createPlayerActionInterval()");
 
         // Bounce perpetually with ease
         let ascent = cc.moveBy(this.jumpDuration, cc.v2(0, this.jumpHeight)).easing(cc.easeCubicActionOut());
@@ -79,20 +79,20 @@ export default class Player extends cc.Component {
         cc.callFunc(this.playJumpSound, this);
 
         const actionInternval = cc.repeatForever(cc.sequence(ascent, decent));
-        console.log("< Player::createPlayerActionInterval("+actionInternval+");");
+        // console.log("< Player::createPlayerActionInterval("+actionInternval+");");
         return actionInternval;
     }
 
     private playJumpSound(){
-        console.log("> Player::playJumpSound()");
+        // console.log("> Player::playJumpSound()");
 
         cc.audioEngine.playEffect(this.jumpAudio, false);
 
-        console.log("< Player::playJumpSound()");
+        // console.log("< Player::playJumpSound()");
     }
 
     private onKeyDown(event: KeyboardEvent){
-        console.log("Player::onKeyDown()");
+        // console.log("Player::onKeyDown()");
 
         switch(event.keyCode) {
             case cc.macro.KEY.a:
@@ -105,7 +105,7 @@ export default class Player extends cc.Component {
     }
 
     private onKeyUp(event: KeyboardEvent){
-        console.log("Player::onKeyUp()");
+        // console.log("Player::onKeyUp()");
 
         switch(event.keyCode) {
             case cc.macro.KEY.a:
