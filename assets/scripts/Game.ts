@@ -2,7 +2,6 @@ const {ccclass, property} = cc._decorator;
 
 @ccclass
 export default class Game extends cc.Component {
-
     yGround: number = 0;
 
     @property(cc.Node)
@@ -29,15 +28,19 @@ export default class Game extends cc.Component {
 
     }
 
-    private spawnNewStar(): void {
+    spawnNewStar(): void {
 
-        var newStar = cc.instantiate(this.starPrefab);
+        const newStar = cc.instantiate(this.starPrefab);
+
+        // Staging a reference of Game object on a star component
+        newStar.getComponent("Star").game = this;
+
         this.node.addChild(newStar);
         newStar.setPosition(this.calcRandomPosition());
 
     }
 
-    private calcRandomPosition(): cc.Vec2 {
+    calcRandomPosition(): cc.Vec2 {
 
         // According to the position of the ground level and the main character's jump height, 
         // randomly obtain an anchor point of the star on the y axis
