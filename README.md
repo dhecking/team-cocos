@@ -1,4 +1,4 @@
-# star-catcher
+# Star Catcher
 
 ## resources
 

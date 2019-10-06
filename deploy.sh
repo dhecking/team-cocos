@@ -1,34 +1,53 @@
 #!/usr/bin/env sh
 
-PLATFORM='web-mobile';
-REPO_PATH=`git rev-parse --show-toplevel`;
-REPO=`basename ${REPO_PATH}`;
-BRANCH=`git branch | grep \* | cut -d ' ' -f2`;
-BUILD="/mnt/c/users/dheck/software/CocosCreator/CocosCreator.exe --path . --build 'title=${BRANCH};platform=${PLATFORM};buildPath=./build;debug=false;webOrientation=landscape;packageName=com.${REPO}.${BRANCH}'";
+REPO_PATH=`git rev-parse --show-toplevel`
+REPO_NAME=`basename $REPO_PATH`
+BRANCH=`git branch | grep \* | cut -d ' ' -f2`
+COCOS_PLAT="web-mobile"
+COCOS_ROOT="/mnt/c/users/dheck/software/CocosCreator"
+COCOS_SOURCE="/mnt/c/users/dheck/github/dhecking/$REPO_NAME"
+COCOS_CONFIG="'title=$BRANCH;platform=$COCOS_PLAT;packageName=com.$REPO_NAME.$BRANCH;buildPath=./build;debug=false;webOrientation=landscape'"
+PROMPT="$REPO_NAME> "
 
-echo ${BUILD};
-eval ${BUILD};
+echo "COCOS_PLAT:   $COCOS_PLAT"
+echo "COCOS_ROOT:   $COCOS_ROOT"
+echo "COCOS_SOURCE: $COCOS_SOURCE"
+echo "COCOS_CONFIG: $COCOS_CONFIG"
 
-cd ./build/${PLATFORM};
-
-GIT_INIT="git init"
-echo $GIT_INIT
-eval $GIT_INIT
+CMD="$COCOS_ROOT/CocosCreator.exe --path . --build $COCOS_CONFIG"
+echo "$PROMPT $CMD"
+eval $CMD
+echo ''
 echo ''
 
-GIT_ADD="git add -A"
-echo $GIT_ADD
-eval $GIT_ADD
-eval ''
-
-GIT_COMMIT="git commit -m 'deploy'"
-echo $GIT_COMMIT
-eval $GIT_COMMIT
+CMD="cd ./build/$COCOS_PLAT"
+echo "$PROMPT $CMD"
+eval $CMD
+echo ''
 echo ''
 
-GIT_PUSH="git push -f git@github.com:dhecking/${REPO}.git master:gh-pages"
-echo $GIT_PUSH
-eval $GIT_PUSH
+CMD="git init"
+echo "$PROMPT $CMD"
+eval $CMD
+echo ''
+echo ''
+
+CMD="git add -A"
+echo "$PROMPT $CMD"
+eval $CMD
+echo ''
+echo ''
+
+CMD="git commit -m 'deploy'"
+echo "$PROMPT $CMD"
+eval $CMD
+echo ''
+echo ''
+
+CMD="git push -f git@github.com:dhecking/${REPO_NAME}.git master:gh-pages"
+echo "$PROMPT $CMD"
+eval $CMD
+echo ''
 echo ''
 
 cd -
