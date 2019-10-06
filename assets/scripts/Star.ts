@@ -21,6 +21,11 @@ export default class Star extends cc.Component {
             return;
         }
 
+        // update the transparency of the star according to the timer in the Game script
+        const opacityRatio = 1 - this.game.timer/this.game.starDuration;
+        const minOpacity = 50;
+        this.node.opacity = minOpacity + Math.floor(opacityRatio * (255 - minOpacity));
+
     }
 
     getPlayerDistance(): number {
