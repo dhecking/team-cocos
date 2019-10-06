@@ -4,6 +4,8 @@ const {ccclass, property} = cc._decorator;
 export default class Game extends cc.Component {
     yGround: number = 0;
     score: number = 0;
+    timer: number = 0;
+    starDuration: number = 0;
 
     @property(cc.Label)
     scoreDisplay: cc.Label = null;
@@ -21,12 +23,25 @@ export default class Game extends cc.Component {
     maxStarDuration: number = 0;
 
     onLoad(): void {
+
         this.yGround = this.ground.y + this.ground.height/2; // try this.ground.top instead
         this.spawnNewStar();
+        
     }
 
-    start () {
+    update(dt: number) {
+        // update timer for each frame, when a new star is not 
+        // generated after exceeding duration invoke the logic of game failure
+        if (this.timer > this.starDuration) {
+            this.gameOver();
+            return;
+        }
+        this.timer += dt;
+    }
 
+    gameOver(): void {
+        this.player.stopAllActions(); //stop the jumping action of the player node
+        cc.director.loadScene('game');
     }
 
     increaseScore(): void {
@@ -44,6 +59,10 @@ export default class Game extends cc.Component {
 
         this.node.addChild(newStar);
         newStar.setPosition(this.calcRandomPosition());
+
+        // reset timer, randomly choose a value according the scale of star duration
+        this.starDuration = this.minStarDuration + Math.random() * (this.maxStarDuration - this.minStarDuration);
+        this.timer = 0;
 
     }
 
