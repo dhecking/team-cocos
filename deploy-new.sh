@@ -7,7 +7,7 @@ BUILD="/mnt/c/users/dheck/software/CocosCreator/CocosCreator.exe --path . --buil
 
 eval ${BUILD};
 
-cd build/web-module;
+cd ./build/web-module;
 
 git init;
 git add -A;
