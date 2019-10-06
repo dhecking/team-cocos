@@ -162,7 +162,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 398.47852096595864
+      "z": 391.4434825105663
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -529,9 +529,6 @@
       "__id__": 2
     },
     "_enabled": true,
-    "score": 0,
-    "minStarDuration": 3,
-    "maxStarDuration": 5,
     "ground": {
       "__id__": 7
     },
@@ -541,6 +538,9 @@
     "star": {
       "__uuid__": "aed02bba-db49-4e84-8019-4642e8410833"
     },
+    "score": 0,
+    "minStarDuration": 3,
+    "maxStarDuration": 5,
     "_id": "d94QLaYWJPPqzhSlVDSsK+"
   }
 ]
