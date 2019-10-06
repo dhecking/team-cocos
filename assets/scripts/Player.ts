@@ -7,7 +7,8 @@ export default class Player extends cc.Component {
     right: boolean = false;
     playerAction: cc.ActionInterval = null;
 
-    // @property allows for editing from cocos
+    @property
+    jumpAudio: cc.AudioClip;
     @property
     accel: number = 0;
     @property
@@ -66,7 +67,16 @@ export default class Player extends cc.Component {
         // Bounce perpetually with ease
         let ascent = cc.moveBy(this.jumpDuration, cc.v2(0, this.jumpHeight)).easing(cc.easeCubicActionOut());
         let decent = cc.moveBy(this.jumpDuration, cc.v2(0, -this.jumpHeight)).easing(cc.easeCubicActionIn());
+
+        // add a callback function to invoke other defined methods after the action is finished
+        var callback = cc.callFunc(this.playJumpSound, this);
+
         return cc.repeatForever(cc.sequence(ascent, decent));
+    }
+
+    playJumpSound(){
+        // invoke sound engine to play the sound
+        cc.audioEngine.playEffect(this.jumpAudio, false);
     }
 
     onKeyDown(event: KeyboardEvent){

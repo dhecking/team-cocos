@@ -165,7 +165,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 551.7934986800287
+      "z": 562.0504870561007
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -501,6 +501,9 @@
       "__id__": 9
     },
     "_enabled": true,
+    "jumpAudio": {
+      "__uuid__": "dc194f1a-c8a5-46ca-aaf9-f03b70974af5"
+    },
     "accel": 400,
     "maxSpeed": 1000,
     "jumpHeight": 150,
