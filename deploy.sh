@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+## https://docs.cocos.com/creator/manual/en/publish/publish-in-command-line.html
+
 REPO_PATH=`git rev-parse --show-toplevel`
 REPO_NAME=`basename $REPO_PATH`
 BRANCH=`git branch | grep \* | cut -d ' ' -f2`
@@ -22,7 +24,6 @@ CMD="$COCOS_ROOT/CocosCreator.exe --path . --build $COCOS_CONFIG"
 echo "$PROMPT $CMD"
 eval $CMD
 echo ''
-
 
 CMD="cd ./build/$COCOS_PLAT"
 echo "$PROMPT $CMD"
