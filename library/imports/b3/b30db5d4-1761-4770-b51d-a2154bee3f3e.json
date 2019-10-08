@@ -1,0 +1,28 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "videplayIcon",
+    "texture": "f6e0bec5-d58c-4287-885c-74feecfba31e",
+    "atlas": "",
+    "rect": [
+      10,
+      4,
+      108,
+      121
+    ],
+    "offset": [
+      0,
+      -0.5
+    ],
+    "originalSize": [
+      128,
+      128
+    ],
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}
