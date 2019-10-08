@@ -76,7 +76,7 @@ export default class Player extends cc.Component {
         let ascent = cc.moveBy(this.jumpDuration, cc.v2(0, this.jumpHeight)).easing(cc.easeCubicActionOut());
         let decent = cc.moveBy(this.jumpDuration, cc.v2(0, -this.jumpHeight)).easing(cc.easeCubicActionIn());
 
-        cc.callFunc(this.playJumpSound, this);
+        // cc.callFunc(this.playJumpSound, this);
 
         const actionInternval = cc.repeatForever(cc.sequence(ascent, decent));
         // console.log("< Player::createPlayerActionInterval("+actionInternval+");");
@@ -95,9 +95,11 @@ export default class Player extends cc.Component {
         // console.log("Player::onKeyDown()");
 
         switch(event.keyCode) {
+            case cc.macro.KEY.left:
             case cc.macro.KEY.a:
                 this.left = true;
                 break;
+            case cc.macro.KEY.right:
             case cc.macro.KEY.d:
                 this.right = true;
                 break;
@@ -108,14 +110,18 @@ export default class Player extends cc.Component {
         // console.log("Player::onKeyUp()");
 
         switch(event.keyCode) {
+            case cc.macro.KEY.left:
             case cc.macro.KEY.a:
                 this.left = false;
+                this.playJumpSound();
                 break;
+            case cc.macro.KEY.right:
             case cc.macro.KEY.d:
                 this.right = false;
+                this.playJumpSound();
                 break;
         }
-        this.playJumpSound();
+
     }
 
 }

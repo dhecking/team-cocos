@@ -640,8 +640,8 @@
     "starPrefab": {
       "__uuid__": "aed02bba-db49-4e84-8019-4642e8410833"
     },
-    "minStarDuration": 3,
-    "maxStarDuration": 5,
+    "minStarDuration": 10,
+    "maxStarDuration": 20,
     "_id": "d94QLaYWJPPqzhSlVDSsK+"
   }
 ]
