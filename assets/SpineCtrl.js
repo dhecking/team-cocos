@@ -8,12 +8,13 @@ cc.Class({
         mixTime: 0.2
     },
 
-    onLoad () {
-        var spine = this.spine = this.getComponent('sp.Skeleton');
-        this._setMix('walk', 'run');
-        this._setMix('run', 'jump');
-        this._setMix('walk', 'jump');
-        
+    onLoad() {
+        cc.debug.setDisplayStats(false);
+        var spine = (this.spine = this.getComponent("sp.Skeleton"));
+        this._setMix("walk", "run");
+        this._setMix("run", "jump");
+        this._setMix("walk", "jump");
+
         spine.setStartListener(trackEntry => {
             var animationName = trackEntry.animation ? trackEntry.animation.name : "";
             cc.log("[track %s][animation %s] start.", trackEntry.trackIndex, animationName);
@@ -30,12 +31,12 @@ cc.Class({
             var animationName = trackEntry.animation ? trackEntry.animation.name : "";
             cc.log("[track %s][animation %s] will be disposed.", trackEntry.trackIndex, animationName);
         });
-        spine.setCompleteListener((trackEntry) => {
+        spine.setCompleteListener(trackEntry => {
             var animationName = trackEntry.animation ? trackEntry.animation.name : "";
-            if (animationName === 'shoot') {
+            if (animationName === "shoot") {
                 this.spine.clearTrack(1);
             }
-            var loopCount = Math.floor(trackEntry.trackTime / trackEntry.animationEnd); 
+            var loopCount = Math.floor(trackEntry.trackTime / trackEntry.animationEnd);
             cc.log("[track %s][animation %s] complete: %s", trackEntry.trackIndex, animationName, loopCount);
         });
         spine.setEventListener((trackEntry, event) => {
@@ -45,58 +46,57 @@ cc.Class({
 
         this._hasStop = false;
     },
-    
+
     // OPTIONS
-    
-    toggleDebugSlots () {
+
+    toggleDebugSlots() {
         this.spine.debugSlots = !this.spine.debugSlots;
     },
-    
-    toggleDebugBones () {
+
+    toggleDebugBones() {
         this.spine.debugBones = !this.spine.debugBones;
     },
-    
-    toggleTimeScale () {
+
+    toggleTimeScale() {
         if (this.spine.timeScale === 1.0) {
             this.spine.timeScale = 0.3;
-        }
-        else {
+        } else {
             this.spine.timeScale = 1.0;
         }
     },
-    
+
     // ANIMATIONS
-    
-    stop () {
+
+    stop() {
         this.spine.clearTrack(0);
         this._hasStop = true;
     },
 
-    walk () {
-        this.spine.setAnimation(0, 'walk', true);
+    walk() {
+        this.spine.setAnimation(0, "walk", true);
         this._hasStop = false;
     },
-    
-    run () {
-        this.spine.setAnimation(0, 'run', true);
+
+    run() {
+        this.spine.setAnimation(0, "run", true);
         this._hasStop = false;
     },
-    
-    jump () {
+
+    jump() {
         var oldAnim = this.spine.animation;
-        this.spine.setAnimation(0, 'jump', false);
+        this.spine.setAnimation(0, "jump", false);
         if (oldAnim && !this._hasStop) {
-            this.spine.addAnimation(0, oldAnim === 'run' ? 'run' : 'walk', true, 0);
+            this.spine.addAnimation(0, oldAnim === "run" ? "run" : "walk", true, 0);
         }
     },
-    
-    shoot () {
-        this.spine.setAnimation(1, 'shoot', false);
+
+    shoot() {
+        this.spine.setAnimation(1, "shoot", false);
     },
-    
+
     //
-    
-    _setMix (anim1, anim2) {
+
+    _setMix(anim1, anim2) {
         this.spine.setMix(anim1, anim2, this.mixTime);
         this.spine.setMix(anim2, anim1, this.mixTime);
     }
