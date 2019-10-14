@@ -74,7 +74,7 @@
   },
   {
     "__type__": "cc.Sprite",
-    "_name": "",
+    "_name": "peach-100<Sprite>",
     "_objFlags": 0,
     "node": {
       "__id__": 1
@@ -105,7 +105,7 @@
     "_id": ""
   },
   {
-    "__type__": "342c4tQ6udBmZCL/iFAX6EB",
+    "__type__": "687f2mRhaVPvqS7gwhp6v3H",
     "_name": "",
     "_objFlags": 0,
     "node": {
@@ -121,7 +121,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "4e92712c-f521-4d69-b95a-3e46f6d73bb7"
     },
     "fileId": "8aS9xtHatL44I+Ha88WiLU",
     "sync": false

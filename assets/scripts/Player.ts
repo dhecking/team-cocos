@@ -1,13 +1,13 @@
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class Player extends cc.Component {
-    speed: number = 0; 
+    speed: number = 0;
     left: boolean = false;
     right: boolean = false;
     playerAction: cc.ActionInterval = null;
 
-    @property({type: cc.AudioClip})
+    @property({ type: cc.AudioClip })
     jumpAudio: cc.AudioClip = null;
 
     @property
@@ -29,7 +29,7 @@ export default class Player extends cc.Component {
         // console.log("< Player::onLoad()");
     }
 
-    onDestroy (): void {
+    onDestroy(): void {
         // console.log("> Player::onDestroy()");
 
         // Stop listening for keyboard events
@@ -39,7 +39,7 @@ export default class Player extends cc.Component {
         // console.log("< Player::onDestroy()");
     }
 
-    start () {
+    start() {
         // console.log("> Player::start()");
 
         // Peacht players action interval
@@ -49,18 +49,18 @@ export default class Player extends cc.Component {
         // console.log("< Player::start()");
     }
 
-    update(dt: number){
+    update(dt: number) {
 
         // update directional speed 
-        if(this.left){
+        if (this.left) {
             this.speed -= this.accel * dt; // reduce
         }
-        else if (this.right){
+        else if (this.right) {
             this.speed += this.accel * dt; // increase
         }
 
         // restrict player speed based on the max
-        if(Math.abs(this.speed) > this.maxSpeed) {
+        if (Math.abs(this.speed) > this.maxSpeed) {
             // if speed reach limit, use max speed with current direction
             this.speed = this.maxSpeed * this.speed / Math.abs(this.speed);
         }
@@ -83,7 +83,7 @@ export default class Player extends cc.Component {
         return actionInternval;
     }
 
-    private playJumpSound(){
+    private playJumpSound() {
         // console.log("> Player::playJumpSound()");
 
         cc.audioEngine.playEffect(this.jumpAudio, false);
@@ -91,10 +91,10 @@ export default class Player extends cc.Component {
         // console.log("< Player::playJumpSound()");
     }
 
-    private onKeyDown(event: KeyboardEvent){
+    private onKeyDown(event: KeyboardEvent) {
         // console.log("Player::onKeyDown()");
 
-        switch(event.keyCode) {
+        switch (event.keyCode) {
             case cc.macro.KEY.left:
             case cc.macro.KEY.a:
                 this.left = true;
@@ -106,10 +106,10 @@ export default class Player extends cc.Component {
         }
     }
 
-    private onKeyUp(event: KeyboardEvent){
+    private onKeyUp(event: KeyboardEvent) {
         // console.log("Player::onKeyUp()");
 
-        switch(event.keyCode) {
+        switch (event.keyCode) {
             case cc.macro.KEY.left:
             case cc.macro.KEY.a:
                 this.left = false;
