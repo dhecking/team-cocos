@@ -171,7 +171,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 368.9268220121709
+      "z": 361.9986187818954
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -691,9 +691,9 @@
       "__uuid__": "47c29f10-3fc5-4d81-9e13-40ff6dce0d43"
     },
     "accel": 1000,
-    "maxSpeed": 400,
-    "jumpHeight": 300,
-    "jumpDuration": 0.5,
+    "maxSpeed": 600,
+    "jumpHeight": 250,
+    "jumpDuration": 0.3,
     "_id": "6ftvhAQrJProNzQd+3Ocvq"
   },
   {
