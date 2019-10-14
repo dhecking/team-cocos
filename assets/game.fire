@@ -165,7 +165,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 369.79284741595535
+      "z": 363.01349230195524
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -537,7 +537,7 @@
     "_contentSize": {
       "__type__": "cc.Size",
       "width": 0,
-      "height": 50.4
+      "height": 55.56
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -587,8 +587,10 @@
     "_fontSize": 50,
     "_lineHeight": 40,
     "_enableWrapText": true,
-    "_N$file": null,
-    "_isSystemFontUsed": true,
+    "_N$file": {
+      "__uuid__": "c3426ba8-0106-4617-8096-73e095f2079c"
+    },
+    "_isSystemFontUsed": false,
     "_spacingX": 0,
     "_batchAsBitmap": false,
     "_N$horizontalAlign": 1,
