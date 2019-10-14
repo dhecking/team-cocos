@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg  PUBLIC '-//W3C//DTD SVG 1.0//EN'  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="843.4mm" height="427.04mm" clip-rule="evenodd" fill-rule="evenodd" image-rendering="optimizeQuality" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" version="1.0" viewBox="0 0 97220 49226" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+    .fil0 {fill:#00A0E3}
+    .fil1 {fill:url(#a)}
+    .fil2 {fill:url(#b)}
+  </style>
+  <linearGradient id="a" y1="50%" y2="50%">
+   <stop stop-color="#EBECEC" offset="0"/>
+   <stop stop-color="#FEFEFE" offset="1"/>
+  </linearGradient>
+  <linearGradient id="b" x1="100%" x2="0%" y1="50%" y2="50%" xlink:href="#a">
+  </linearGradient>
+ </defs>
+   <rect class="fil0" width="97220" height="49226"/>
+    <ellipse class="fil1" cx="53153" cy="31218" rx="13105" ry="8644"/>
+    <ellipse class="fil2" cx="53017" cy="31127" rx="10490" ry="7743"/>
+    <ellipse class="fil1" cx="33419" cy="29376" rx="13105" ry="8644"/>
+    <ellipse class="fil2" cx="33283" cy="29285" rx="10490" ry="7743"/>
+    <ellipse class="fil1" cx="40826" cy="27049" rx="13105" ry="5264"/>
+    <ellipse class="fil2" cx="40689" cy="26994" rx="10490" ry="4715"/>
+    <ellipse class="fil1" cx="25994" cy="24803" rx="13105" ry="5264"/>
+    <ellipse class="fil2" cx="25283" cy="25347" rx="10490" ry="4715"/>
+    <ellipse class="fil1" cx="39706" cy="19657" rx="13105" ry="5264"/>
+    <ellipse class="fil2" cx="39569" cy="19601" rx="10490" ry="4715"/>
+    <ellipse class="fil1" cx="39706" cy="19657" rx="13105" ry="5264"/>
+    <ellipse class="fil2" cx="39569" cy="19601" rx="10490" ry="4715"/>
+    <ellipse class="fil1" cx="55386" cy="24697" rx="13105" ry="5264"/>
+    <ellipse class="fil2" cx="55250" cy="24642" rx="10490" ry="4715"/>
+    <ellipse class="fil1" cx="52295" cy="18190" rx="13105" ry="8644"/>
+    <ellipse class="fil2" cx="52158" cy="18099" rx="10490" ry="7743"/>
+    <ellipse class="fil1" cx="66587" cy="26540" rx="13105" ry="8350"/>
+    <ellipse class="fil2" cx="66450" cy="26452" rx="10490" ry="7479"/>
+</svg>
