@@ -42,10 +42,10 @@ export default class Game extends cc.Component {
     }
 
     gameOver(): void {
-        if(this.player){
-            this.player.stopAllActions(); //stop the jumping action of the player node
-            //TEMP: cc.director.loadScene('game');
-        }
+
+        this.player.stopAllActions(); //stop the jumping action of the player node
+        cc.director.loadScene('game');
+
 
     }
 

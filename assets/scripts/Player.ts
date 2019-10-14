@@ -39,14 +39,14 @@ export default class Player extends cc.Component {
         // console.log("< Player::onDestroy()");
     }
 
-    peacht () {
-        // console.log("> Player::peacht()");
+    start () {
+        // console.log("> Player::start()");
 
         // Peacht players action interval
         this.playerAction = this.createPlayerActionInterval();
         this.node.runAction(this.playerAction);
 
-        // console.log("< Player::peacht()");
+        // console.log("< Player::start()");
     }
 
     update(dt: number){

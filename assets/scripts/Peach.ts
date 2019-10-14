@@ -12,8 +12,6 @@ export default class Peach extends cc.Component {
     pickRadius: number = 0;
 
     update(dt: number): void {
-
-        if(! (this.game && this.game.player) ) return;
         
         // judge if the distance between the peach and main character 
         // is less than the collecting distance for each frame
@@ -25,7 +23,7 @@ export default class Peach extends cc.Component {
 
         // update the transparency of the peach according to the timer in the Game script
         const opacityRatio = 1 - this.game.timer/this.game.peachDuration;
-        const minOpacity = 50;
+        const minOpacity = 10;
         this.node.opacity = minOpacity + Math.floor(opacityRatio * (255 - minOpacity));
 
     }
