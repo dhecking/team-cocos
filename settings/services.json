@@ -1,0 +1,28 @@
+{
+	"game": {
+		"name": "Sweet Peaches",
+		"appid": "610345252",
+		"cid": "0"
+	},
+	"configs": [
+		{
+			"appid": "610345252",
+			"services": [
+				{
+					"service_id": "235",
+					"enable": true,
+					"params": {
+						"appid": "610345252",
+						"storeid": "web-mobile",
+						"plugin_version": "1.2.0_2.1.0"
+					}
+				},
+				{
+					"service_id": "242",
+					"enable": true
+				}
+			]
+		}
+	],
+	"needExecNative": true
+}
