@@ -7,6 +7,9 @@ then
   return
 fi
 
+# exit when any command fails
+set -e
+
 git checkout --orphan $1
 rm -rf assets build library local temp packages settings README.md
 echo "# $1" > README.md
