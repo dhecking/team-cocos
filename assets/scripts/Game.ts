@@ -9,7 +9,7 @@ export default class Game extends cc.Component {
 
     @property(cc.Label)
     scoreDisplay: cc.Label = null;
-    @property
+    @property(cc.AudioClip)
     scoreAudio: cc.AudioClip = null;
 
     @property(cc.Node)

@@ -7,7 +7,7 @@ export default class Player extends cc.Component {
     right: boolean = false;
     playerAction: cc.ActionInterval = null;
 
-    @property
+    @property(cc.AudioClip)
     jumpAudio: cc.AudioClip = null;
 
     @property

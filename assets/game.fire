@@ -165,7 +165,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 361.9986187818954
+      "z": 369.79284741595535
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -501,7 +501,9 @@
       "__id__": 9
     },
     "_enabled": true,
-    "jumpAudio": null,
+    "jumpAudio": {
+      "__uuid__": "47c29f10-3fc5-4d81-9e13-40ff6dce0d43"
+    },
     "accel": 1000,
     "maxSpeed": 400,
     "jumpHeight": 150,
@@ -624,7 +626,9 @@
     "scoreDisplay": {
       "__id__": 13
     },
-    "scoreAudio": null,
+    "scoreAudio": {
+      "__uuid__": "ab927695-5977-467d-84db-11b5fe054566"
+    },
     "ground": {
       "__id__": 7
     },
