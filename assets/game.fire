@@ -168,7 +168,7 @@
       "__type__": "cc.Vec3",
       "x": 0,
       "y": 0,
-      "z": 534.3376741349987
+      "z": 368.9268220121709
     },
     "_scale": {
       "__type__": "cc.Vec3",
@@ -741,7 +741,9 @@
       "__id__": 2
     },
     "_enabled": true,
-    "scoreDisplay": null,
+    "scoreDisplay": {
+      "__id__": 17
+    },
     "scoreAudio": null,
     "ground": {
       "__id__": 7
@@ -752,8 +754,8 @@
     "peachPrefab": {
       "__uuid__": "c92d145a-ef99-40dc-9f82-2f303c9270d0"
     },
-    "minPeachDuration": 20,
-    "maxPeachDuration": 30,
+    "minPeachDuration": 18,
+    "maxPeachDuration": 25,
     "_id": "4bLqe/iNBEpZiDAmwvGkLv"
   }
 ]

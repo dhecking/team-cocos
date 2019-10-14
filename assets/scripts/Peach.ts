@@ -13,6 +13,8 @@ export default class Peach extends cc.Component {
 
     update(dt: number): void {
 
+        if(! (this.game && this.game.player) ) return;
+        
         // judge if the distance between the peach and main character 
         // is less than the collecting distance for each frame
         if (this.getPlayerDistance() < this.pickRadius) {
