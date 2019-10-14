@@ -22,7 +22,7 @@ export default class Player extends cc.Component {
     onLoad(): void {
         // console.log("> Player::onLoad()");
 
-        // Start listening for keyboard events
+        // Peacht listening for keyboard events
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
         cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
 
@@ -39,14 +39,14 @@ export default class Player extends cc.Component {
         // console.log("< Player::onDestroy()");
     }
 
-    start () {
-        // console.log("> Player::start()");
+    peacht () {
+        // console.log("> Player::peacht()");
 
-        // Start players action interval
+        // Peacht players action interval
         this.playerAction = this.createPlayerActionInterval();
         this.node.runAction(this.playerAction);
 
-        // console.log("< Player::start()");
+        // console.log("< Player::peacht()");
     }
 
     update(dt: number){

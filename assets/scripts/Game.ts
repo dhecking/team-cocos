@@ -5,7 +5,7 @@ export default class Game extends cc.Component {
     yGround: number = 0;
     score: number = 0;
     timer: number = 0;
-    starDuration: number = 0;
+    peachDuration: number = 0;
 
     @property(cc.Label)
     scoreDisplay: cc.Label = null;
@@ -17,24 +17,24 @@ export default class Game extends cc.Component {
     @property(cc.Node)
     player: cc.Node = null;
     @property(cc.Prefab)
-    starPrefab: cc.Prefab = null;
+    peachPrefab: cc.Prefab = null;
 
     @property({displayName: "Min Duration"})
-    minStarDuration: number = 0;
+    minPeachDuration: number = 0;
     @property({displayName: "Max Duration"})
-    maxStarDuration: number = 0;
+    maxPeachDuration: number = 0;
 
     onLoad(): void {
         cc.debug.setDisplayStats(false);
         this.yGround = this.ground.y + this.ground.height/2; 
-        this.spawnNewStar();
+        this.spawnNewPeach();
         
     }
 
     update(dt: number) {
-        // update timer for each frame, when a new star is not 
+        // update timer for each frame, when a new peach is not 
         // generated after exceeding duration invoke the logic of game failure
-        if (this.timer > this.starDuration) {
+        if (this.timer > this.peachDuration) {
             this.gameOver();
             return;
         }
@@ -42,8 +42,11 @@ export default class Game extends cc.Component {
     }
 
     gameOver(): void {
-        this.player.stopAllActions(); //stop the jumping action of the player node
-        cc.director.loadScene('game');
+        if(this.player){
+            this.player.stopAllActions(); //stop the jumping action of the player node
+            cc.director.loadScene('game');
+        }
+
     }
 
     increaseScore(): void {
@@ -54,18 +57,18 @@ export default class Game extends cc.Component {
         this.playScoreSound();
     }
 
-    spawnNewStar(): void {
+    spawnNewPeach(): void {
 
-        const newStar = cc.instantiate(this.starPrefab);
+        const newPeach = cc.instantiate(this.peachPrefab);
 
-        // Staging a reference of Game object on a star component
-        newStar.getComponent("Star").game = this;
+        // Staging a reference of Game object on a peach component
+        newPeach.getComponent("Peach").game = this;
 
-        this.node.addChild(newStar);
-        newStar.setPosition(this.calcRandomPosition());
+        this.node.addChild(newPeach);
+        newPeach.setPosition(this.calcRandomPosition());
 
-        // reset timer, randomly choose a value according the scale of star duration
-        this.starDuration = this.minStarDuration + Math.random() * (this.maxStarDuration - this.minStarDuration);
+        // reset timer, randomly choose a value according the scale of peach duration
+        this.peachDuration = this.minPeachDuration + Math.random() * (this.maxPeachDuration - this.minPeachDuration);
         this.timer = 0;
 
     }
@@ -73,15 +76,15 @@ export default class Game extends cc.Component {
     calcRandomPosition(): cc.Vec2 {
 
         // According to the position of the ground level and the main character's jump height, 
-        // randomly obtain an anchor point of the star on the y axis
+        // randomly obtain an anchor point of the peach on the y axis
         const randY = this.yGround + Math.random() * this.player.getComponent('Player').jumpHeight + 50;
 
         // according to the width of the screen, 
-        // randomly obtain an anchor point of star on the x axis
+        // randomly obtain an anchor point of peach on the x axis
         const maxX = this.node.width/2;
         const randX = (Math.random() - 0.5) * 2 * maxX;
 
-        // return to the anchor point of the star
+        // return to the anchor point of the peach
         return cc.v2(randX, randY);
     }
 

@@ -3,17 +3,17 @@ import Game from "./Game";
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class Star extends cc.Component {
+export default class Peach extends cc.Component {
     game: Game = null;
 
-    // When the distance between the star and main character is less 
+    // When the distance between the peach and main character is less 
     // than this value, collection of the point will be completed
     @property
     pickRadius: number = 0;
 
     update(dt: number): void {
 
-        // judge if the distance between the star and main character 
+        // judge if the distance between the peach and main character 
         // is less than the collecting distance for each frame
         if (this.getPlayerDistance() < this.pickRadius) {
             // invoke collecting behavior
@@ -21,8 +21,8 @@ export default class Star extends cc.Component {
             return;
         }
 
-        // update the transparency of the star according to the timer in the Game script
-        const opacityRatio = 1 - this.game.timer/this.game.starDuration;
+        // update the transparency of the peach according to the timer in the Game script
+        const opacityRatio = 1 - this.game.timer/this.game.peachDuration;
         const minOpacity = 50;
         this.node.opacity = minOpacity + Math.floor(opacityRatio * (255 - minOpacity));
 
@@ -40,14 +40,14 @@ export default class Star extends cc.Component {
     
     onPicked(): void{
 
-        // When the stars are being collected, 
-        // invoke the interface in the Game script to generate a new star
-        this.game.spawnNewStar();
+        // When the peachs are being collected, 
+        // invoke the interface in the Game script to generate a new peach
+        this.game.spawnNewPeach();
 
         // invoke the scoring method of the Game script
         this.game.increaseScore();
 
-        // then destroy the current star's node
+        // then destroy the current peach's node
         this.node.destroy();
 
     }
