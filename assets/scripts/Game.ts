@@ -1,4 +1,4 @@
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class Game extends cc.Component {
@@ -9,7 +9,7 @@ export default class Game extends cc.Component {
 
     @property(cc.Label)
     scoreDisplay: cc.Label = null;
-    @property({type: cc.AudioClip})
+    @property({ type: cc.AudioClip })
     scoreAudio: cc.AudioClip = null;
 
     @property(cc.Node)
@@ -19,16 +19,16 @@ export default class Game extends cc.Component {
     @property(cc.Prefab)
     peachPrefab: cc.Prefab = null;
 
-    @property({displayName: "Min Duration"})
+    @property({ displayName: "Min Duration" })
     minPeachDuration: number = 0;
-    @property({displayName: "Max Duration"})
+    @property({ displayName: "Max Duration" })
     maxPeachDuration: number = 0;
 
     onLoad(): void {
         cc.debug.setDisplayStats(false);
-        this.yGround = this.ground.y + this.ground.height/2; 
+        this.yGround = this.ground.y + this.ground.height / 2;
         this.spawnNewPeach();
-        
+
     }
 
     update(dt: number) {
@@ -52,7 +52,7 @@ export default class Game extends cc.Component {
     increaseScore(): void {
         this.score++;
         // update the words of the scoreDisplay Label
-        this.scoreDisplay.string = 'Score: ' + this.score;
+        this.scoreDisplay.string = 'Points: ' + this.score;
 
         this.playScoreSound();
     }
@@ -81,14 +81,14 @@ export default class Game extends cc.Component {
 
         // according to the width of the screen, 
         // randomly obtain an anchor point of peach on the x axis
-        const maxX = this.node.width/2;
+        const maxX = this.node.width / 2;
         const randX = (Math.random() - 0.5) * 2 * maxX;
 
         // return to the anchor point of the peach
         return cc.v2(randX, randY);
     }
 
-    playScoreSound(){
+    playScoreSound() {
         // console.log("> Game::playScoreSound()");
 
         cc.audioEngine.playEffect(this.scoreAudio, false);
